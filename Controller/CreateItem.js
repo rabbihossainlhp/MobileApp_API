@@ -1,12 +1,9 @@
 //dependencies.....
 const db = require("../Db");
 
-//Module Scuffholder 
-const RouteController = {};
-
 
 //First Create a items into db...
-RouteController.createItem = (req,res)=>{
+const createItem = (req,res)=>{
     const {name,description} = req.body;
     const Query = `Insert into District_information(name,description) Values(?,?)`;
 
@@ -23,4 +20,4 @@ RouteController.createItem = (req,res)=>{
 
 
 //Exporting the moduel...
-module.exports = RouteController;
+module.exports = createItem;

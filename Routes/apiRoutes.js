@@ -1,12 +1,14 @@
 //dependencies...
 const Router = require("express").Router();
-const RouteController = require("../Controller/routeController");
+const createItem = require("../Controller/CreateItem");
+const getSingleItem = require("../Controller/GetSingleItem");
+const updateItem = require("../Controller/UpdateItem");
 
 
 Router.get("/allitems",);
-Router.get("/singleitem/:id",);
-Router.post("/createitem",RouteController.createItem);
-Router.post("/updateitem/:id",);
+Router.get("/singleitem/:id",getSingleItem);
+Router.post("/createitem",createItem);
+Router.post("/updateitem/:id",updateItem);
 Router.delete("/deleteitem/:id",);
 
 
