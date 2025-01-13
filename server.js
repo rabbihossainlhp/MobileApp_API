@@ -21,7 +21,7 @@ app.use("/api",apiRoutes);
 
 
 //Port
-const Port = process.env.Port;
+const Port = process.env.PORT;
 
 //Listent the server....
 app.listen(Port,()=>console.log('Serever is runnin on  http://localhost:'+Port));
