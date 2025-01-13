@@ -2,6 +2,7 @@
 const express = require('express');
 const apiRoutes = require("./Routes/apiRoutes");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 
 //Main app 
@@ -20,7 +21,7 @@ app.use("/api",apiRoutes);
 
 
 //Port
-const Port = 3535;
+const Port = process.env.Port;
 
 //Listent the server....
 app.listen(Port,()=>console.log('Serever is runnin on  http://localhost:'+Port));

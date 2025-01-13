@@ -1,13 +1,15 @@
 //Dependencies...
 const mysql = require('mysql2');
+require('dotenv').config();
+
 
 //First Create a connection to the database,
 const Connection = mysql.createConnection(
     {
-        host:"localhost",
-        user:"rabbi",
-        password:"123ASDasd@&",
-        database:"District_Info"
+        host:      process.env.Db_Host,
+        user:      process.env.Db_User,
+        password:  process.env.Db_Password,
+        database:  process.env.Db_Name
     }
 );  
 
