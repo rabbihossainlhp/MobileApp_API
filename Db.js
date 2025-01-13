@@ -6,17 +6,17 @@ require('dotenv').config();
 //First Create a connection to the database,
 const Connection = mysql.createConnection(
     {
-        host:      process.env.DB_HOST,
-        user:      process.env.DB_USER,
-        password:  process.env.DB_PASSWORD,
-        database:  process.env.DB_NAME
+        host:process.env.DB_HOST,
+        user:process.env.DB_USER,
+        password:process.env.DB_PASSWORD,
+        database:process.env.DB_NAME
     }
 );  
 
 //Let's Connect
 Connection.connect((err)=>{
     if(err){
-        console.log("Something went wrong to connect with db"+err.message);
+        console.log("Something went wrong to connect with db "+err);
     }
     else{
         console.log("Database Connected Successfully");
