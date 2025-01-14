@@ -15,13 +15,18 @@ const Connection = mysql.createConnection(
 );  
 
 //Let's Connect
-Connection.connect((err)=>{
+try {
+    Connection.connect((err)=>{
     if(err){
         console.log("Something went wrong to connect with db "+err);
     }
     else{
         console.log("Database Connected Successfully");
     }
-});
+})
+} catch (error) {
+    console.log("Error in Connection: "+error)
+}
+
 
 module.exports = Connection;
