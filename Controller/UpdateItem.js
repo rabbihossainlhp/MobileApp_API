@@ -5,7 +5,7 @@ const db = require("../Db");
 //main function to update single item from table...
 const updateItem = (req,res)=>{
 
-    const Query = `Update District_Information set name = ?, description = ? where id  = ?`;
+    const Query = `Update District_information2 set name = ?, description = ? where id  = ?`;
     const {id} = req.params;
     const {name,description} = req.body;
     
