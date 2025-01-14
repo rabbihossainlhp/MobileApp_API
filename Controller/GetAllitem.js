@@ -9,7 +9,7 @@ const getAllItem = (req,res)=>{
         if(error){
             res.status(404).json({erMsg:"any information not found"});
         }else{
-            res.status(200).json({SuccessMsg:"Sucessfully founded the information",result:result});
+            res.status(200).json({SuccessMsg:"Sucessfully founded all information",result:result});
         }
     });
 };
