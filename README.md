@@ -24,3 +24,24 @@ This project provides a basic API that interacts with a MySQL database. It inclu
 1. Clone the repository:
    ```sh
    git clone https://github.com/rabbihossainlhp/MobileApp_API.git
+
+
+# District Information API
+
+This is a simple API for managing district information. It allows you to create, update, retrieve, and delete district information.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Running the API](#running-the-api)
+- [API Endpoints](#api-endpoints)
+- [Error Handling](#error-handling)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name 
