@@ -4,7 +4,7 @@ const db = require("../Db");
 //main function to get single item from table...
 const getSingleItem = (req,res)=>{
     const id = req.params.id;
-    const Query = `Select * from District_information where id = ?`;
+    const Query = `Select * from District_Information where id = ?`;
 
     db.query(Query,[id],(error, result)=>{
         if(error){
