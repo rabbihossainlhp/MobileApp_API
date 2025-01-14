@@ -5,7 +5,7 @@ const db = require("../Db");
 //First Create a items into db...
 const createItem = (req,res)=>{
     const {name,description} = req.body;
-    const Query = `Insert into District_information2(name,description) Values(?,?)`;
+    const Query = `Insert into District_information3(name,description) Values(?,?)`;
 
     //apply the query to store info....
     db.query(Query,[name,description],(error,result)=>{
