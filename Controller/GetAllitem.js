@@ -7,7 +7,7 @@ const getAllItem = (req,res)=>{
 
     db.query(Query,(error, result)=>{
         if(error){
-            res.status(404).json({erMsg:"any information not found"});
+            res.status(404).json({erMsg:"any information not found",error:error});
         }else{
             res.status(200).json({SuccessMsg:"Sucessfully founded all information",result:result});
         }

@@ -8,7 +8,7 @@ const deleteSingleItem = (req,res)=>{
 
     db.query(Query,[id],(error, result)=>{
         if(error){
-            res.status(404).json({erMsg:"Not found the information"});
+            res.status(404).json({erMsg:"Not found the information",error:error});
         } 
         else{
             res.status(200).json({SuccessMsg:"Delete Successfully",result:result});

@@ -8,7 +8,7 @@ const getSingleItem = (req,res)=>{
 
     db.query(Query,[id],(error, result)=>{
         if(error){
-            res.status(404).json({erMsg:"Not found the information"});
+            res.status(404).json({erMsg:"Not found the information",error:error});
         }else if(result.length === 0){
             res.status(404).json({erMsg:"Not found the information"});
         }   
