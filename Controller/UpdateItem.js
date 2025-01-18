@@ -1,21 +1,20 @@
 //dependencies.....
-const db = require("../Db");
+const {Connection} = require("../Db");
 
 
 //main function to update single item from table...
-const updateItem = (req,res)=>{
+const updateItem = async (req,res)=>{
 
     const Query = `Update District_information3 set name = ?, description = ? where id  = ?`;
     const {id} = req.params;
     const {name,description} = req.body;
     
-    db.query(Query,[name,description,id],(error,result)=>{
-        if(error){
-            res.status(403).json({errMsg:"Something is going wrong to update info",error:error});
-        }else{
-            res.status(201).json({SuccessMsg:"your data has been updated successfully",result:result});
-        }
-    });
+    try{
+        const [Res] = await Connection.query(Query,[name,description,id]);
+        res.status(201).json({SucMsg:"Data Updated Successfully",Data:Res});
+    }catch(error){
+        res.status(403).json({errMsg:"Something is going wrong to update info",error:error});
+    }
 }
 
 //export 

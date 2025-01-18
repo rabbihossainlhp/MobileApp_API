@@ -1,20 +1,20 @@
 //dependencies.....
-const db = require("../Db");
+const {Connection} = require("../Db");
 
 
 //First Create a items into db...
-const createItem = (req,res)=>{
+const createItem = async (req,res)=>{
     const {name,description} = req.body;
     const Query = `Insert into District_information3(name,description) Values(?,?)`;
 
     //apply the query to store info....
-    db.query(Query,[name,description],(error,result)=>{
-        if(error){
-            res.status(500).json({message:"Something went wrong to store the data",error:error});
-        }else{
-            res.status(201).json({message:"Your data has been stored successfully",result:result.id ,name,description });
-        }
-    });
+    try{
+        const [Res] = await Connection.query(Query,[name,description]);
+        res.status(201).json({SucMsg:"Data Created Successfully",Data:Res});
+    }catch(error){
+        res.status(403).json({erMsg:"Something went wrong to create data"+error});
+    }
+
 };
 
 

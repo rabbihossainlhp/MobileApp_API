@@ -2,6 +2,7 @@
 const express = require('express');
 const apiRoutes = require("./Routes/apiRoutes");
 const bodyParser = require("body-parser");
+const { testConnection } = require('./Db');
 require("dotenv").config();
 
 
@@ -24,4 +25,4 @@ app.use("/api",apiRoutes);
 const Port = process.env.PORT;
 
 //Listent the server....
-app.listen(Port,()=>console.log('Serever is runnin on  http://localhost:'+Port));
+app.listen(Port,async()=>{console.log('Serever is runnin on  http://localhost:'+Port); await testConnection()});
